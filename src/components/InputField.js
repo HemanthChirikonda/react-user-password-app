@@ -1,22 +1,22 @@
-import { Fragment, useState } from "react"
+
 import React from "react"
 
 
-const InputField=()=>{
-const [statevalue,setStateValue]=useState('');
-
-const handleChange=(e)=>{
-    console.log(e.target.value)
-setStateValue(e.target.value)
-}
+const InputField = (props) => {
 
 
-return (
-<>
-<input type={"text"} onChange={handleChange} />
-</>
+    const handleChange = (e) => {
+        console.log(e.target.value)
+        props.onsubmited(e.target.value)
+    }
 
-)
+
+    return (
+        <>
+            <input type={"email"} placeholder={'user@something.com'} onChange={handleChange} className={props.className} required />
+        </>
+
+    )
 }
 
 export default InputField;

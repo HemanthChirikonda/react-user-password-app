@@ -1,10 +1,16 @@
 import React, { Fragment } from 'react'
 
 
-const SubmitButton=()=>{
+const SubmitButton=(props)=>{
+
+    const submit=(e)=>{
+            e.preventdefult();
+      
+
+    }
     return (
         <Fragment>
-           <input type={'submit'}/>
+           <input type={'submit'} onClick={submit}/>
         </Fragment>
     )
 }

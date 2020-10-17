@@ -1,15 +1,16 @@
-import React, { Fragment, useState } from "react"
+import React, { Fragment } from "react"
 
-const PasswordField=()=>{
-    const [stateValue,setStateValue]=useState('')
+const PasswordField=(props)=>{
+    
 
     const handlechange=(e)=>{
-        console.log(e.target.value)
-        setStateValue(e.target.value);
+        console.log(e.target.value);
+        props.onsubmited(e.target.value);
     }
+  
     return (
        <Fragment>
-           <input type={'password'} onChange={handlechange}/>
+           <input type={'password'} required placeholder={ props.placeholder? props.placeholder:'password'}onChange={handlechange} className={props.className}/>
        </Fragment>
     )
 }
